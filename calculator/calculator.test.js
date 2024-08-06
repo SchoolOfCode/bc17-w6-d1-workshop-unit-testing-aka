@@ -7,7 +7,7 @@ test("calculator test", () => {
     expect(calculate('-', 4, 6)).toBe(-5);
 });
 
-test("subtract test", () => {
+test.only("subtract test", () => {
     expect(calculate('-', 9, 10)).toBe(-1);
     // expect(calculate('-', 4, 6)).toBe(10);
     // expect(calculate('-', 4, 6)).toBe(-2);
@@ -42,3 +42,5 @@ test("divide test", () => {
 // * calculate('🍕', -41414, 2); // should throw an error since '🍕' is not a supported operator
 // * ```
 // */
+
+
