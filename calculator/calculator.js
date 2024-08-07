@@ -33,3 +33,4 @@ export function calculate(operator, firstNumber, secondNumber) {
       throw new Error(`Unsupported operator ${operator}`);
   }
 }
+

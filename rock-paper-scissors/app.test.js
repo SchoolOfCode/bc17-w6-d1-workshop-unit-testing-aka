@@ -5,6 +5,7 @@ import {
     gameLoop,
     ROCK,
     PAPER,
+    SCISSORS,
     DRAW, 
     LOSS, 
     WIN
@@ -26,6 +27,21 @@ test("calculateRoundResult test 2", () => {
         message: "Player chose rock and computer chose paper. Computer wins."
           })
 })
+
+
+test.only("invalid input test", () => {
+    expect(calculateRoundResult(!ROCK || !PAPER || !SCISSORS, !ROCK || !PAPER || !SCISSORS)).toThrow('Invalid operator');        
+    })
+
+
+
+// Within app.test.js, plan and write test cases/scenarios for the following functions:
+// calculateRoundResult - you should have a test for each permutation of valid inputs and assert that it returns the correct value
+// calculateRoundResult - you should have a few tests for a few invalid inputs too and assert that it throws an error with the correct message
+// calculateNewScores - you should test different score objects with different outcomes and assert that the correct value is returned
+// generateComputerMove - you should have tests that verify and assert that the function can return either rock, paper or scissors.
+// The ticket also specifies that the team doesn't want randomness in the test (because if the test passes, it's hard to tell if it was just due to sheer chance or not -- and if the test randomly fails, it can be hard to reproduce the random number that caused it to fail).
+// Instead you and your team should research different approaches to predictably and reliably testing logic that depends on randomness and then write the tests based on what you've explored.
 
 
 

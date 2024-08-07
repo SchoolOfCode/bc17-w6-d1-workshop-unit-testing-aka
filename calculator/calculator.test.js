@@ -2,17 +2,14 @@ import { expect, test } from 'vitest';
 import {calculate} from './calculator.js';
 
 test("calculator test", () => {
-    expect(calculate('+', 9, 10)).toBe(19);
-    expect(calculate('+', 4, 6)).toBe(10);
-    expect(calculate('-', 4, 6)).toBe(-5);
+    expect(calculate('-', 4, 6)).toBe(-5).toThrow('Invalid operator');
 });
 
-test.only("subtract test", () => {
+test("subtract test", () => {
     expect(calculate('-', 9, 10)).toBe(-1);
     // expect(calculate('-', 4, 6)).toBe(10);
     // expect(calculate('-', 4, 6)).toBe(-2);
 });
-
 
 test("add test", () => {
     expect(calculate('+', 5, 10)).toBe(15);
@@ -31,6 +28,12 @@ test("divide test", () => {
     // expect(calculate('-', 4, 6)).toBe(10);
     // expect(calculate('-', 4, 6)).toBe(-2);
 });
+
+test("square test", () => {
+    expect(calculate('sq', 9)).toBe(81);
+});
+
+
 
 // * calculate('+', 9, 10); // should return 19
 // * calculate('-', 4, 6); // should return -2
